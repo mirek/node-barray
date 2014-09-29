@@ -20,9 +20,9 @@
   "author": "Mirek Rusin http://github.com/mirek",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mirek/node-binary-search/issues"
+    "url": "https://github.com/mirek/node-barray/issues"
   },
-  "homepage": "https://github.com/mirek/node-binary-search",
+  "homepage": "https://github.com/mirek/node-barray",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-coffee": "^0.10.1",
