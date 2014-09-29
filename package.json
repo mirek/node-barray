@@ -1,0 +1,31 @@
+{
+  "name": "barray",
+  "version": "0.0.1",
+  "description": "Binary search with insert position, insert, remove and check.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mirek/node-barray.git"
+  },
+  "keywords": [
+    "bsearch",
+    "binary",
+    "search",
+    "sort",
+    "insert"
+  ],
+  "author": "Mirek Rusin http://github.com/mirek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mirek/node-binary-search/issues"
+  },
+  "homepage": "https://github.com/mirek/node-binary-search",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-coffee": "^0.10.1",
+    "grunt-mocha-test": "^0.11.0"
+  }
+}
