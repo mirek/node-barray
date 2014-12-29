@@ -17,14 +17,34 @@ module.exports = (grunt) ->
         tasks: [ 'coffee' ]
 
     mochaTest:
-      test:
+      all:
         options:
           reporter: 'spec'
           require: [
-            'coffee-script'
+            'coffee-script/register'
           ]
-        src: [ 'spec/**/*.coffee' ]
+        src: ['spec/**/*.coffee']
+      one:
+        options:
+          bail: true # Fail early on single test so it's easy to inspect db state.
+          require: [
+            'coffee-script/register'
+          ]
+        src: [ ]
+  grunt.registerTask 'test', (name) ->
+    switch name
+      when undefined, 'all'
+        grunt.task.run 'mochaTest:all'
+      else
+        if name.indexOf('/') isnt -1
+          [ dirname, basename ] = name.split '/'
+          path = "spec/#{dirname}/spec-#{basename}.coffee"
+        else
+          path = "spec/spec-#{name}.coffee"
 
-  grunt.registerTask 'test', [ 'mochaTest' ]
+        grunt.log.writeln "Testing #{path}"
+        grunt.config.set 'mochaTest.one.src', [ path ]
+        grunt.task.run [ 'mochaTest:one' ]
+
   grunt.registerTask 'compile', [ 'coffee' ]
   grunt.registerTask 'default', [ 'compile' ]
