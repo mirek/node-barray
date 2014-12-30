@@ -1,6 +1,6 @@
 {
   "name": "barray",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Binary search with insert position, insert, remove and check.",
   "main": "lib/index.js",
   "scripts": {
